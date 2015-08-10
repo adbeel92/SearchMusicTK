@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Search Music</string>
+
+    <string name="action_settings">Ajustes</string>
+    <string name="album">Álbum</string>
+    <string name="song">Cancion</string>
+    <string name="albums">Álbumes</string>
+    <string name="songs">Canciones</string>
+</resources>
