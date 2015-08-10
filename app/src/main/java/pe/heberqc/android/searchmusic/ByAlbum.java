@@ -15,8 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import pe.heberqc.android.searchmusic.adapters.ResultAdapter;
-import pe.heberqc.android.searchmusic.models.Album;
+
+import pe.heberqc.android.searchmusic.adapters.AlbumAdapter;
 import pe.heberqc.android.searchmusic.models.SearchAlbum;
 import pe.heberqc.android.searchmusic.service.SearchService;
 import retrofit.Callback;
@@ -31,7 +31,7 @@ public class ByAlbum extends Fragment implements AdapterView.OnItemClickListener
     Button button;
     ProgressBar progressBar;
     ListView listView;
-    ResultAdapter resultAdapter;
+    AlbumAdapter albumAdapter;
 
     public ByAlbum() {
     }
@@ -65,7 +65,7 @@ public class ByAlbum extends Fragment implements AdapterView.OnItemClickListener
         button = (Button) getActivity().findViewById(R.id.btn_search);
         progressBar = (ProgressBar) getActivity().findViewById(R.id.progress);
         listView = (ListView) getActivity().findViewById(R.id.list);
-        listView.setAdapter(resultAdapter);
+        listView.setAdapter(albumAdapter);
         listView.setOnItemClickListener(this);
         button.setOnClickListener(this);
         progressBar.setVisibility(View.GONE);
@@ -83,7 +83,7 @@ public class ByAlbum extends Fragment implements AdapterView.OnItemClickListener
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(getActivity(),Details.class);
-        intent.putExtra(MainActivity.ALBUM, resultAdapter.getAlbums().get(position));
+        intent.putExtra(MainActivity.ALBUM, albumAdapter.getAlbums().get(position));
         startActivity(intent);
     }
 
@@ -96,8 +96,8 @@ public class ByAlbum extends Fragment implements AdapterView.OnItemClickListener
             @Override
             public void success(SearchAlbum searchAlbum, Response response) {
                 progressBar.setVisibility(View.GONE);
-                resultAdapter = new ResultAdapter(getActivity(), searchAlbum.getResults());
-                listView.setAdapter(resultAdapter);
+                albumAdapter = new AlbumAdapter(getActivity(), searchAlbum.getResults());
+                listView.setAdapter(albumAdapter);
             }
 
             @Override

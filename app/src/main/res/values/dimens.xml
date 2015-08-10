@@ -7,4 +7,5 @@
     <dimen name="size_horizontal_space">10sp</dimen>
     <dimen name="cd_cover_100">100px</dimen>
     <dimen name="cd_cover_60">60px</dimen>
+    <dimen name="cd_cover_30">30px</dimen>
 </resources>

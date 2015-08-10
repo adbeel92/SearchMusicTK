@@ -7,15 +7,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.squareup.picasso.Picasso;
+
 import java.util.List;
+
 import pe.heberqc.android.searchmusic.R;
 import pe.heberqc.android.searchmusic.models.Album;
+import pe.heberqc.android.searchmusic.models.Song;
 
-public class ResultAdapter extends ArrayAdapter<Album>{
+public class SongAdapter extends ArrayAdapter<Song>{
 
     Activity context;
-    List<Album> albums;
+    List<Song> songs;
 
     static class ViewHolder {
         public ImageView image;
@@ -25,9 +29,9 @@ public class ResultAdapter extends ArrayAdapter<Album>{
         public TextView tv_4;
     }
 
-    public ResultAdapter(Activity context, List<Album> albums) {
-        super(context, R.layout.item, albums);
-        this.albums = albums;
+    public SongAdapter(Activity context, List<Song> songs) {
+        super(context, R.layout.item, songs);
+        this.songs = songs;
         this.context = context;
     }
 
@@ -46,18 +50,17 @@ public class ResultAdapter extends ArrayAdapter<Album>{
             rowView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) rowView.getTag();
-        Album album = albums.get(position);
-        holder.tv_1.setText(album.getCollectionName());
-        holder.tv_2.setText(album.getArtistName());
-        holder.tv_3.setText("");
-        holder.tv_3.setVisibility(View.GONE);
-        holder.tv_4.setText(album.getPrimaryGenreName());
-        Picasso.with(context).load(album.getArtworkUrl100())
+        Song song = songs.get(position);
+        holder.tv_1.setText(song.getTrackName());
+        holder.tv_2.setText(song.getCollectionName());
+        holder.tv_3.setText(song.getArtistName());
+        holder.tv_4.setText(song.getPrimaryGenreName());
+        Picasso.with(context).load(song.getArtworkUrl100())
                 .placeholder(R.drawable.ic_cd).into(holder.image);
         return rowView;
     }
 
-    public List<Album> getAlbums() {
-        return albums;
+    public List<Song> getSongs() {
+        return songs;
     }
 }

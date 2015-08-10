@@ -1,13 +1,61 @@
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pe.heberqc.android.searchmusic.BySong">
+    tools:context="pe.heberqc.android.searchmusic.BySong"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_min_margin"
+    android:paddingRight="@dimen/activity_min_margin"
+    android:gravity="center_horizontal">
 
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/stexto"
+            android:imeOptions="actionSearch"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="textLongMessage"
+            android:hint="@string/search"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/sbtn_search"
+            android:layout_toStartOf="@+id/sbtn_search"
+            android:layout_alignBottom="@+id/sbtn_search" />
+
+        <Button
+            android:id="@+id/sbtn_search"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Canción" />
+        android:layout_gravity="center">
 
-</FrameLayout>
+        <ListView
+            android:id="@+id/slist"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/sprogress"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:indeterminate="false"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</LinearLayout>
+

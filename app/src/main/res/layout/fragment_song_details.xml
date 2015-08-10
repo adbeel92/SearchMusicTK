@@ -1,0 +1,689 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pe.heberqc.android.searchmusic.DetailsAlbumFragment" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal">
+                <ImageView
+                    android:layout_width="@dimen/cd_cover_100"
+                    android:layout_height="@dimen/cd_cover_100"
+                    android:id="@+id/artworkUrl100"
+                    android:contentDescription="@string/artworkUrl100" />
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:layout_width="@dimen/cd_cover_60"
+                    android:layout_height="@dimen/cd_cover_60"
+                    android:id="@+id/artworkUrl60"
+                    android:contentDescription="@string/artworkUrl60" />
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:layout_width="@dimen/cd_cover_30"
+                    android:layout_height="@dimen/cd_cover_30"
+                    android:id="@+id/artworkUrl30"
+                    android:contentDescription="@string/s_artworkUrl30" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_wrapperType" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/wrapperType" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_kind" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/kind" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_artistId" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/artistId" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_collectionId" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/collectionId" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackId" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackId" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_artistName" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/artistName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_collectionName" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/collectionName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackName" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_collectionCensoredName" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/collectionCensoredName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackCensoredName" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackCensoredName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_artistViewUrl" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/artistViewUrl" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_collectionViewUrl" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/collectionViewUrl" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackViewUrl" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackViewUrl" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_previewUrl" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/previewUrl" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_collectionPrice" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/collectionPrice" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackPrice" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackPrice" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_releaseDate" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/releaseDate" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_collectionExplicitness" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/collectionExplicitness" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackExplicitness" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackExplicitness" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_discCount" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/discCount" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_discNumber" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/discNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackCount" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackCount" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackNumber" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackNumber" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_trackTimeMillis" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/trackTimeMillis" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_country" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/country" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_currency" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/currency" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_primaryGenreName" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/primaryGenreName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_radioStationUrl" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/radioStationUrl" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_isStreamable" />
+
+                <Space
+                    android:layout_width="@dimen/size_horizontal_space"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/song"
+                    android:id="@+id/isStreamable" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

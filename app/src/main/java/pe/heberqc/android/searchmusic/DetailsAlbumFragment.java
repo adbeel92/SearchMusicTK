@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import pe.heberqc.android.searchmusic.models.Album;
 
-public class DetailsFragment extends Fragment {
+public class DetailsAlbumFragment extends Fragment {
 
     Album album;
 
@@ -36,11 +36,11 @@ public class DetailsFragment extends Fragment {
     public TextView releaseDate;
     public TextView primaryGenreName;
 
-    public DetailsFragment() {
+    public DetailsAlbumFragment() {
     }
 
-    public static DetailsFragment newInstance(Bundle arguments){
-        DetailsFragment f = new DetailsFragment();
+    public static DetailsAlbumFragment newInstance(Bundle arguments){
+        DetailsAlbumFragment f = new DetailsAlbumFragment();
         if(arguments != null){
             f.setArguments(arguments);
         }
@@ -50,7 +50,7 @@ public class DetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_details, container, false);
+        return inflater.inflate(R.layout.fragment_album_details, container, false);
     }
 
     @Override

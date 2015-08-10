@@ -17,12 +17,14 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     public static final String API;
     public static final String ALBUM;
+    public static final String SONG;
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
 
     static {
         API = "https://itunes.apple.com";
         ALBUM = "ALBUM";
+        SONG = "SONG";
     }
 
     @Override

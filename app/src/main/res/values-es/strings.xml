@@ -1,9 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Search Music</string>
 
     <string name="action_settings">Ajustes</string>
     <string name="album">Álbum</string>
-    <string name="song">Cancion</string>
+    <string name="song">Canción</string>
     <string name="albums">Álbumes</string>
     <string name="songs">Canciones</string>
+    <string name="search_name_song">Buscar por nombre de canción</string>
+    <string name="search_name_album">Buscar por nombre de álbum</string>
+    <string name="search">Buscar</string>
 </resources>

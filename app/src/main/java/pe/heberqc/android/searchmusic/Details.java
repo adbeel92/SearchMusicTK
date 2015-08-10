@@ -1,24 +1,19 @@
 package pe.heberqc.android.searchmusic;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import pe.heberqc.android.searchmusic.models.Album;
 
 public class Details extends Activity {
-
-    Album album;
-    Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle arguments = new Bundle();
         arguments.putSerializable(MainActivity.ALBUM, getIntent().getExtras().getSerializable(MainActivity.ALBUM));
-        DetailsFragment fragment = DetailsFragment.newInstance(arguments);
+        DetailsAlbumFragment fragment = DetailsAlbumFragment.newInstance(arguments);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(android.R.id.content, fragment);
         ft.commit();
