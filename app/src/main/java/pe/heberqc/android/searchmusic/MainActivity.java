@@ -15,8 +15,15 @@ import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
 
+    public static final String API;
+    public static final String ALBUM;
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
+
+    static {
+        API = "https://itunes.apple.com";
+        ALBUM = "ALBUM";
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,8 +2,9 @@
 package pe.heberqc.android.searchmusic.models;
 
 import com.google.gson.annotations.Expose;
+import java.io.Serializable;
 
-public class Album {
+public class Album implements Serializable {
 
     @Expose
     private String wrapperType;
