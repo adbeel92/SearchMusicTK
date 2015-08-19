@@ -1,6 +1,7 @@
 package pe.heberqc.android.searchmusic;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,8 +13,14 @@ public class Details extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle arguments = new Bundle();
-        arguments.putSerializable(MainActivity.ALBUM, getIntent().getExtras().getSerializable(MainActivity.ALBUM));
-        DetailsAlbumFragment fragment = DetailsAlbumFragment.newInstance(arguments);
+        Fragment fragment;
+        if (getIntent().getExtras().get(MainActivity.SEARCH).equals(MainActivity.Search.ALBUM.cod)) {
+            arguments.putSerializable(MainActivity.Search.ALBUM.title, getIntent().getExtras().getSerializable(MainActivity.Search.ALBUM.title));
+            fragment = DetailsAlbumFragment.newInstance(arguments);
+        } else {
+            arguments.putSerializable(MainActivity.Search.SONG.title, getIntent().getExtras().getSerializable(MainActivity.Search.SONG.title));
+            fragment = DetailsSongFragment.newInstance(arguments);
+        }
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(android.R.id.content, fragment);
         ft.commit();

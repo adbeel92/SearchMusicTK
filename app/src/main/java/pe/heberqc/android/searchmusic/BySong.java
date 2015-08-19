@@ -83,7 +83,8 @@ public class BySong extends Fragment implements AdapterView.OnItemClickListener,
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(getActivity(),Details.class);
-        intent.putExtra(MainActivity.ALBUM, songAdapter.getSongs().get(position));
+        intent.putExtra(MainActivity.SEARCH, MainActivity.Search.SONG.cod);
+        intent.putExtra(MainActivity.Search.SONG.title, songAdapter.getSongs().get(position));
         startActivity(intent);
     }
 

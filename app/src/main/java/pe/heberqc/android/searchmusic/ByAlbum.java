@@ -83,7 +83,8 @@ public class ByAlbum extends Fragment implements AdapterView.OnItemClickListener
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(getActivity(),Details.class);
-        intent.putExtra(MainActivity.ALBUM, albumAdapter.getAlbums().get(position));
+        intent.putExtra(MainActivity.SEARCH, MainActivity.Search.ALBUM.cod);
+        intent.putExtra(MainActivity.Search.ALBUM.title, albumAdapter.getAlbums().get(position));
         startActivity(intent);
     }
 

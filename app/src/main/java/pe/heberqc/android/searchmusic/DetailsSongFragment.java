@@ -76,7 +76,7 @@ public class DetailsSongFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            song = (Song) bundle.getSerializable(MainActivity.ALBUM);
+            song = (Song) bundle.getSerializable(MainActivity.Search.SONG.title);
             fillDetails();
         }
     }

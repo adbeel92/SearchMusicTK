@@ -15,16 +15,31 @@ import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
 
+    public enum Search {
+        SONG("SONG",1),
+        ALBUM("ALBUM",2);
+
+        String title;
+        int cod;
+
+        Search(String type, int cod) {
+            this.title = type;
+            this.cod = cod;
+        }
+    }
+
     public static final String API;
-    public static final String ALBUM;
-    public static final String SONG;
+//    public static final String ALBUM;
+//    public static final String SONG;
+    public static final String SEARCH;
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
 
     static {
         API = "https://itunes.apple.com";
-        ALBUM = "ALBUM";
-        SONG = "SONG";
+//        ALBUM = "ALBUM";
+//        SONG = "SONG";
+        SEARCH = "SEARCH";
     }
 
     @Override
